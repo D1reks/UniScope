@@ -1,11 +1,14 @@
 package com.example.uniscope.domain.repository.Implementation
 
+import com.example.uniscope.domain.repository.InstitutionParser
 import com.example.uniscope.domain.repository.InstitutionRepository
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.withContext
 import javax.inject.Inject
+import com.example.uniscope.domain.model.Specialty
+import com.example.uniscope.domain.model.EducationalInstitution
 
 class InstitutionRepositoryImpl @Inject constructor(
     private val parser: InstitutionParser,

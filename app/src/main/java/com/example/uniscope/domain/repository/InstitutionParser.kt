@@ -1,4 +1,4 @@
-package com.example.uniscope.data.remote.parser
+package com.example.uniscope.domain.repository
 
 import com.example.uniscope.domain.model.EducationalInstitution
 import com.example.uniscope.domain.model.Specialty

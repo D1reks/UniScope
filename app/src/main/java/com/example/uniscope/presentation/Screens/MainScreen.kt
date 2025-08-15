@@ -23,6 +23,7 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.example.uniscope.domain.model.MainState
 import com.example.uniscope.domain.model.Specialty
+import com.example.uniscope.presentation.component.AppBar
 import com.example.uniscope.presentation.feature.main.MainIntent
 import com.example.uniscope.presentation.viewmodel.MainViewModel
 
@@ -90,9 +91,4 @@ private fun SpecialtyCard(specialty: Specialty) {
             Text(text = "Подано заявок: ${specialty.currentApplications}/${specialty.availablePlaces}")
         }
     }
-}
-
-@Composable
-fun AppBar() {
-    TODO("Not yet implemented")
 }
