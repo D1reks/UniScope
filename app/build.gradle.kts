@@ -1,3 +1,5 @@
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
@@ -11,7 +13,9 @@ android {
     compileSdk = 36
 
     kotlin {
-        jvmToolchain(11)
+        compilerOptions {
+            jvmTarget.set(JvmTarget.JVM_17)
+        }
     }
 
     defaultConfig {
@@ -34,11 +38,8 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
-    }
-    kotlinOptions {
-        jvmTarget = "11"
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
     buildFeatures {
         compose = true
@@ -59,6 +60,8 @@ dependencies {
     implementation(libs.kotlinx.coroutines.android)
     implementation(libs.androidx.material3)
     implementation(libs.jsoup)
+    implementation(libs.androidx.room.runtime)
+    implementation(libs.androidx.room.ktx)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -67,7 +70,7 @@ dependencies {
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
     kapt(libs.hilt.compiler)
-
+    kapt(libs.androidx.room.compiler)
 }
 
 kapt {

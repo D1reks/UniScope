@@ -1,5 +1,6 @@
 package com.example.uniscope.data.remote.parser
 
+import com.example.uniscope.data.remote.jsoup.JsoupWrapper
 import com.example.uniscope.domain.model.EducationalInstitution
 import com.example.uniscope.domain.model.Specialty
 import com.example.uniscope.domain.repository.InstitutionParser

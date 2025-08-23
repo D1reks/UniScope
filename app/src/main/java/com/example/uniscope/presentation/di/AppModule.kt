@@ -10,6 +10,7 @@ import kotlinx.coroutines.CoroutineDispatcher
 import javax.inject.Singleton
 import dagger.hilt.components.SingletonComponent
 import com.example.uniscope.data.local.dao.InstitutionDao
+import com.example.uniscope.presentation.di.DispatcherAnnotations.IoDispatcher
 
 @Module
 @InstallIn(SingletonComponent::class)
@@ -19,6 +20,6 @@ object AppModule {
     fun provideRepository(
         parser: InstitutionParser,
         dao: InstitutionDao,
-        @DispatcherAnnotations.IoDispatcher dispatcher: CoroutineDispatcher
+        @IoDispatcher dispatcher: CoroutineDispatcher
     ): InstitutionRepository = InstitutionRepositoryImpl(parser, dao, dispatcher)
 }

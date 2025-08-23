@@ -22,6 +22,6 @@ object NetworkModule {
     @Singleton
     fun provideInstitutionParser(
         jsoupWrapper: JsoupWrapper,
-        @DispatcherAnnotations.IoDispatcher dispatcher: CoroutineDispatcher
+        @IoDispatcher dispatcher: CoroutineDispatcher
     ): InstitutionParser = BelarusInstitutionParserImpl(jsoupWrapper, dispatcher)
 }
